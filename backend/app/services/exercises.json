@@ -1,0 +1,84 @@
+[
+    {
+        "id": "squat",
+        "name": "Bodyweight Squat",
+        "description": "A fundamental lower body exercise targeting quads, glutes, and hamstrings. Keep your feet shoulder-width apart, chest up, and sink your hips back as if sitting in a chair.",
+        "difficulty": "Beginner",
+        "muscles": [
+            "quads",
+            "glutes",
+            "hamstrings"
+        ],
+        "equipment": [
+            "none"
+        ]
+    },
+    {
+        "id": "pushup",
+        "name": "Standard Push-up",
+        "description": "An upper body pushing exercise for chest, shoulders, and triceps. Maintain a high plank position, lower your chest towards the floor by bending at the elbows, and push back up.",
+        "difficulty": "Beginner",
+        "muscles": [
+            "chest",
+            "shoulders",
+            "triceps"
+        ],
+        "equipment": [
+            "none"
+        ]
+    },
+    {
+        "id": "dumbbell_bench",
+        "name": "Dumbbell Bench Press",
+        "description": "A compound movement for chest and triceps using dumbbells on a flat bench. Offers a greater range of motion than a barbell bench press.",
+        "difficulty": "Intermediate",
+        "muscles": [
+            "chest",
+            "triceps",
+            "shoulders"
+        ],
+        "equipment": [
+            "dumbbells",
+            "bench"
+        ]
+    },
+    {
+        "id": "pullup",
+        "name": "Pull-up",
+        "description": "A challenging upper body pulling exercise for the back and biceps. Hang from a bar with palms facing away and pull your body up until your chin is over the bar.",
+        "difficulty": "Advanced",
+        "muscles": [
+            "back",
+            "biceps"
+        ],
+        "equipment": [
+            "pull-up bar"
+        ]
+    },
+    {
+        "id": "lat_pulldown",
+        "name": "Cable Lat Pulldown",
+        "description": "A machine-based exercise for building back width. Sit at the machine and pull the bar down to your upper chest while squeezing your shoulder blades together.",
+        "difficulty": "Beginner",
+        "muscles": [
+            "back",
+            "biceps",
+            "shoulders"
+        ],
+        "equipment": [
+            "cables and pulleys"
+        ]
+    },
+    {
+        "id": "bicep_curl",
+        "name": "Dumbbell Bicep Curl",
+        "description": "An isolation exercise for the biceps. Hold dumbbells at your sides and curl them towards your shoulders while keeping your elbows stationary.",
+        "difficulty": "Beginner",
+        "muscles": [
+            "biceps"
+        ],
+        "equipment": [
+            "dumbbells"
+        ]
+    }
+]

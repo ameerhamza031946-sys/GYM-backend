@@ -5,15 +5,19 @@ import os
 
 # Initialize ChromaDB
 # For the hackathon, we use a simple persistent local store
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "chroma")
-client = chromadb.PersistentClient(path=DB_PATH)
+if os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"):
+    DB_PATH = "/tmp/chroma"
+else:
+    DB_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "chroma")
 
-# Force keyword search for hackathon stability due to environment mismatches
-USE_VECTOR = False
 try:
+    client = chromadb.PersistentClient(path=DB_PATH)
     collection = client.get_or_create_collection(name="exercises_fallback")
 except Exception as e:
-    print(f"Collection initialization error: {e}")
+    print(f"ChromaDB initialization error: {e}. Falling back to memory client.")
+    # Use memory client as ultimate fallback
+    client = chromadb.Client()
+    collection = client.get_or_create_collection(name="exercises_fallback")
 
 def populate_knowledge_base():
     """Seed the database with initial exercise data."""

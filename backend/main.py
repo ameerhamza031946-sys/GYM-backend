@@ -24,9 +24,26 @@ app.add_middleware(SlowAPIMiddleware)
 
 @app.on_event("startup")
 def on_startup():
-    init_db()
+    try:
+        print("Starting FitAI API...")
+        init_db()
+        print("Database initialized successfully.")
+    except Exception as e:
+        print(f"CRITICAL: Database initialization failed: {e}")
+        # We don't raise here to let the app start even if DB fails 
+        # (useful for reaching health checks or diagnostic endpoints)
 
-# Configure strict CORS for frontend access
+@app.get("/api/debug-info")
+def debug_info(request: Request):
+    import sys
+    import os
+    return {
+        "python_version": sys.version,
+        "cwd": os.getcwd(),
+        "path": sys.path,
+        "env": {k: v for k, v in os.environ.items() if "KEY" not in k.upper() and "SECRET" not in k.upper()},
+        "vercel_env": os.environ.get("VERCEL")
+    }
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",

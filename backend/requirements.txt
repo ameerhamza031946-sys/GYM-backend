@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+slowapi
+python-dotenv
+python-jose[cryptography]
+passlib[攜-sha256]
+google-generativeai
+pydantic
+pydantic-settings
+email-validator
+databases
+aiosqlite
+sqlite3
